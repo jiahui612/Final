@@ -1,0 +1,23 @@
+<!--继承 layout 模板 复用头部尾部等页面区域-->
+{% extends 'layout.html' %}
+
+{% block main %}
+<div class="jumbotron" style="opacity:0.8;background-color: rgb(113, 83, 138);">
+    <!--用户列表-->
+    <ol class="breadcrumb">
+        <li><a href="#">管理首页</a></li>
+        <li><span></span>学科编辑</li>
+    </ol>
+    <hr>
+    <h3>学科编辑:</h3>
+    <hr>
+    <form method="post">
+        <div class="form-group">
+            <label for="name">学科名称</label>
+            <input type="text" value="{{category.name}}" class="form-control" id="name" name="name">
+        </div>
+
+        <button type="submit" class="btn btn-info">提交</button>
+    </form>
+</div>
+{% endblock %}

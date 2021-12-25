@@ -1,0 +1,21 @@
+<!--继承 layout 模板 复用头部尾部等页面区域-->
+{% extends 'layout.html' %}
+
+{% block main %}
+<!-- <div class="jumbotron" style="opacity:0.8;margin:0;padding:0;background-color: rgb(127, 77, 168);">
+    <hr>
+    管理首页
+    <hr>
+   <h1>Hello, {{userInfo.username}} !</h1>-->
+    <!-- <h5>
+        欢迎进入资料共享后台管理
+            <h3> 【{{userInfo.username}}】, 欢迎来这里发布资料</h3>
+    </h5>
+</div> --> 
+<div class="jumbotron" style="background-color: rgb(113, 83, 138);">
+    <div class="container">
+      <h5>欢迎进入资料共享后台管理</h5>
+      <h3> 【{{userInfo.username}}】, 欢迎来这里发布资料</h3>
+    </div>
+  </div>
+{% endblock %}
