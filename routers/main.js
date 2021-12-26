@@ -2,7 +2,7 @@
 /*
  *   main 模块
  *  /                首页
- *  /view            内容页
+ *  /view            资料页
  *
  *
  */
@@ -46,7 +46,7 @@ router.get('/', function (req, res, next) {
     if (data.category) {
         whereStr.category = data.category;
     }
-    //如果用户未登录//游客 则只显示 首页--即无自己定制版块
+   
 
 
     //读取某用户所有分类信息

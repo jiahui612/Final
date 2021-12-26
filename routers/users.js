@@ -9,7 +9,7 @@ var userRouter = express.Router();
 //
 
 userRouter.get('/', function (req, res, next) {
-    //加载用户博客首页
+    //加载用户首页
     res.render('user/userIndex', {});
 });
 

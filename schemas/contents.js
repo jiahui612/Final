@@ -1,6 +1,6 @@
 
 /*
- *n内容的表结构
+ *资料的表结构
  *
  * */
 
@@ -20,11 +20,11 @@ var schema = new mongoose.Schema({
         //引用
         ref: 'User'//  关联user表中的ID 字段
     },
-    //内容标题
+    //所属学科
     title: String,
-    //内容简介
+    //发布内容
     description: {type: String, default: ''},
-    //内容
+    //详细资料
     content: {type: String, default: ''},
     //添加时间
     addTime: {type: Date, default: new Date()},
@@ -32,11 +32,11 @@ var schema = new mongoose.Schema({
     //阅读数
     views: {type: Number, default: 0},
 
-    //评论
-    comments: {
-        type: Array,
-        default: []
-    }
+    // //评论
+    // comments: {
+    //     type: Array,
+    //     default: []
+    // }
 
 });
 

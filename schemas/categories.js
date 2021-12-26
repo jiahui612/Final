@@ -2,9 +2,9 @@
 
 var mongoose = require('mongoose');
 
-//分类表结构
+//学科表结构
 var schema = new mongoose.Schema({
-    //分类名称
+    //学科名称
     user: {
         //类型
         type: mongoose.Schema.Types.ObjectId,
@@ -18,7 +18,3 @@ var schema = new mongoose.Schema({
 module.exports = schema;
 
 
-/*
- 此处也可以直接
- module.exports = mongoose.model('User',userSchema);
- */

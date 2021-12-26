@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var userSchema = require('../schemas/users');
 
 /*
-*   User
+*   User用户与管理员模型
 *
 **/
 

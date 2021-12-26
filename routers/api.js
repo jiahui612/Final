@@ -4,8 +4,6 @@
  *   /                            首页
  *   /register                    用户注册
  *   /login                       用户登录
- *   /comment                     评论获取
- *   /comment/post                评论提交
  */
 
 var express = require('express');
@@ -137,42 +135,6 @@ routerApi.get('/user/logout', function (req, res) {
     req.cookies.set('userInfo', null);
     res.json(responseData);
     return;
-});
-
-//文章加载获取指定文章的所有评论
-routerApi.get('/comment', function (req, res) {
-    var contentID = req.query.contentID || '';
-    //查询当前这篇内容的信息
-    Content.findOne({
-        _id: contentID
-    }).then(function (content) {
-        responseData.data = content.comments.reverse();
-        res.json(responseData);
-    });
-});
-
-
-//留言评论提交
-routerApi.post('/comment/post', function (req, res) {
-    //内容的ID
-    var contentID = req.body.contentID || '';
-    //定义评论 数组中字段
-    var postData = {
-        username: req.userInfo.username,
-        postTime: new Date(),
-        content: req.body.content
-    }
-    //查询当前这篇内容的信息
-    Content.findOne({
-        _id: contentID
-    }).then(function (content) {
-        content.comments.push(postData);
-        return content.save();
-    }).then(function (newContent) {
-        responseData.message = "评论成功";
-        responseData.data = newContent;
-        res.json(responseData);
-    });
 });
 
 
